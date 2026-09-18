@@ -1,0 +1,137 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-page: #f9fafb;
+    --bg-surface: #ffffff;
+    --border-subtle: #e5e7eb;
+    --border-strong: #d1d5db;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --text-muted: #6b7280;
+    
+    /* Forensic Palette */
+    --authentic-green: #059669;
+    --authentic-green-bg: #ecfdf5;
+    --misleading-amber: #d97706;
+    --misleading-amber-bg: #fffbeb;
+    --false-red: #dc2626;
+    --false-red-bg: #fef2f2;
+    --unverified-slate: #475569;
+    --unverified-slate-bg: #f1f5f9;
+  }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  h1, h2, h3, .font-headline {
+    font-family: 'Merriweather', Georgia, serif;
+  }
+
+  .font-masthead {
+    font-family: 'Playfair Display', 'Merriweather', Georgia, serif;
+  }
+
+  .font-metric, code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Realistic Rubber Stamp Effect */
+.stamp-seal {
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  border-width: 4px;
+  border-radius: 6px;
+  padding: 0.35rem 0.9rem;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+  user-select: none;
+  font-family: 'JetBrains Mono', monospace;
+  box-shadow: inset 0 0 0 1px currentColor, 0 4px 6px -1px rgba(0,0,0,0.1);
+  transform: rotate(-9deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+.stamp-seal:hover {
+  transform: rotate(-6deg) scale(1.04);
+}
+
+.stamp-authentic {
+  color: #047857;
+  border-color: #059669;
+  background-color: rgba(236, 253, 245, 0.92);
+  outline: 2px dashed #059669;
+  outline-offset: 2px;
+}
+
+.stamp-misleading {
+  color: #b45309;
+  border-color: #d97706;
+  background-color: rgba(254, 243, 199, 0.92);
+  outline: 2px dashed #d97706;
+  outline-offset: 2px;
+}
+
+.stamp-false {
+  color: #b91c1c;
+  border-color: #dc2626;
+  background-color: rgba(254, 226, 226, 0.92);
+  outline: 2px dashed #dc2626;
+  outline-offset: 2px;
+}
+
+.stamp-unverified {
+  color: #334155;
+  border-color: #64748b;
+  background-color: rgba(241, 245, 249, 0.92);
+  outline: 2px dotted #64748b;
+  outline-offset: 2px;
+}
+
+/* Subtle newspaper line watermark & print feel */
+.newsprint-border {
+  border-bottom: 3px double #d1d5db;
+}
+
+.newsprint-divider {
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Marquee ticker animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom scrollbars for clean research look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
